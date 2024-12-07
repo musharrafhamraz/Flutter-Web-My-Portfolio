@@ -6,7 +6,7 @@ class AboutMeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1100.0,
+      padding: const EdgeInsets.symmetric(vertical: 70.0, horizontal: 150),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
           gradient: RadialGradient(
@@ -110,9 +110,221 @@ class AboutMeSection extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),
-          )
+          ),
+          const SizedBox(
+            height: 100,
+          ),
+          const HeadetWidget(
+            text: 'S K I L L S ',
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+          const UsingSkillsWidget(),
+          const SizedBox(
+            height: 30,
+          ),
+          const LearningSkillsWidget(),
+          const SizedBox(
+            height: 30,
+          ),
+          const OtherSkillsWidget(),
         ],
       ),
+    );
+  }
+}
+
+class LearningSkillsWidget extends StatelessWidget {
+  const LearningSkillsWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 190.0),
+      child: Column(
+        children: [
+          const Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              ' LEARNING: ',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 20),
+            ),
+          ),
+          const SizedBox(height: 60),
+          GridView(
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            children: const [
+              SkillWidget(
+                imageUrl: 'lib/assets/learning_skills/javascript.png',
+                skillName: 'JAVASCRIPT',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/learning_skills/mongodb.png',
+                skillName: 'MONGODB',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/learning_skills/yolo.png',
+                skillName: 'YOLO',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/learning_skills/rust.png',
+                skillName: 'RUST',
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class OtherSkillsWidget extends StatelessWidget {
+  const OtherSkillsWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 190.0),
+      child: Column(
+        children: [
+          const Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              ' OTHER SKILLS: ',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 20),
+            ),
+          ),
+          const SizedBox(height: 30),
+          GridView(
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            children: const [
+              SkillWidget(
+                imageUrl: 'lib/assets/other_skills/cplusplus.png',
+                skillName: 'C++',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/other_skills/git.png',
+                skillName: 'GIT',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/other_skills/sql.png',
+                skillName: 'SQL',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/other_skills/firebase.png',
+                skillName: 'FIREBASE',
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class UsingSkillsWidget extends StatelessWidget {
+  const UsingSkillsWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 190.0),
+      child: Column(
+        children: [
+          const Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              ' USING NOW: ',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 20),
+            ),
+          ),
+          const SizedBox(height: 60),
+          GridView(
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            children: const [
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/python.png',
+                skillName: 'PYTHON',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/pytorch.png',
+                skillName: 'PYTORCH',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/tensorflow.png',
+                skillName: 'TENSORFLOW',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/flutter.png',
+                skillName: 'FLUTTER',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/dart.png',
+                skillName: 'DART',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/pandas.png',
+                skillName: 'PANDAS',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/openc.png',
+                skillName: 'OPENCV',
+              ),
+              SkillWidget(
+                imageUrl: 'lib/assets/using_skills/sklearn.png',
+                skillName: 'SK Learn',
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SkillWidget extends StatelessWidget {
+  final String imageUrl;
+  final String skillName;
+  const SkillWidget({
+    super.key,
+    required this.imageUrl,
+    required this.skillName,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset(height: 100, width: 100, imageUrl),
+        const SizedBox(
+          height: 10.0,
+        ),
+        Text(skillName),
+      ],
     );
   }
 }
