@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:my_portfolio/sections/about_me_section.dart';
 import 'package:my_portfolio/sections/header_section.dart';
+import 'package:my_portfolio/sections/portfolio_section.dart';
+import 'package:my_portfolio/sections/projects_section.dart';
 import 'package:my_portfolio/sections/read_more_section.dart';
 
 void main() {
@@ -41,6 +43,8 @@ class HomePage extends StatelessWidget {
             HeaderSection(),
             ReadMoreSection(),
             AboutMeSection(),
+            PortfolioSection(),
+            TabBarSection(),
             SizedBox(
               height: 100,
             )
