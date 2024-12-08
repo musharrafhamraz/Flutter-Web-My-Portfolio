@@ -8,6 +8,7 @@ class TabBarSection extends StatelessWidget {
     return DefaultTabController(
       length: 3, // Number of tabs
       child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
         color: Colors.black,
         child: Column(
           children: [
@@ -24,7 +25,8 @@ class TabBarSection extends StatelessWidget {
                       color:
                           Colors.white), // Thickness and color of the indicator
                   insets: EdgeInsets.symmetric(
-                      horizontal: 100.0), // Adjusts the length of the indicator
+                    horizontal: 100.0,
+                  ), // Adjusts the length of the indicator
                 ),
                 tabs: const [
                   Tab(text: " ALL "),
@@ -35,41 +37,22 @@ class TabBarSection extends StatelessWidget {
             ),
             Container(
               height: 600,
-              width: double.infinity,
-              color: Colors.black, // Optional background color
+              width: MediaQuery.of(context).size.width,
+              color: Colors.black54, // Optional background color
               child: const TabBarView(
-                children: [
-                  GridViewTab(
-                    images: [
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                    ],
-                  ),
-                  GridViewTab(
-                    images: [
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                    ],
-                  ),
-                  GridViewTab(
-                    images: [
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                      'lib/assets/pic1.jpg',
-                    ],
-                  ),
-                ],
+                children: [GridViewTab(), GridViewTab(), GridViewTab()],
+              ),
+            ),
+            Container(
+              height: 60,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.black,
+              child: const Center(
+                child: Text(
+                  'And many more to come!',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
+                ),
               ),
             ),
           ],
@@ -80,32 +63,61 @@ class TabBarSection extends StatelessWidget {
 }
 
 class GridViewTab extends StatelessWidget {
-  final List<String> images;
-
-  const GridViewTab({Key? key, required this.images}) : super(key: key);
+  const GridViewTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.all(8.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3, // 3x3 grid
-        mainAxisSpacing: 8.0,
-        crossAxisSpacing: 8.0,
-      ),
-      itemCount: images.length,
-      itemBuilder: (context, index) {
-        return Container(
-          height: 100,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            image: DecorationImage(
-              image: AssetImage(images[index]),
-              fit: BoxFit.cover,
-            ),
+    return const Column(
+      children: [
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(
+                child: Image(
+                  image: AssetImage('lib/assets/pic.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Image(
+                  image: AssetImage('lib/assets/pic.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Image(
+                  image: AssetImage('lib/assets/pic.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
           ),
-        );
-      },
+        ),
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(
+                child: Image(
+                  image: AssetImage('lib/assets/pic.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Image(
+                  image: AssetImage('lib/assets/pic.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Image(
+                  image: AssetImage('lib/assets/pic.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
