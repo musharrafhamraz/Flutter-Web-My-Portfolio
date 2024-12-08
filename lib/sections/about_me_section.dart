@@ -5,6 +5,10 @@ class AboutMeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+    final int crossAxisCount = screenWidth < 600 ? 2 : 4;
+
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 70.0, horizontal: 150),
       width: MediaQuery.of(context).size.width,
@@ -26,45 +30,13 @@ class AboutMeSection extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.5,
             child: const Text(
                 textAlign: TextAlign.center,
-                "dfsdj uds fdhfsdjfh fhsjdsjdhfjkahdsfh fkdhzfdsf fhusfjdshf fhjkdshf hdsfhds fh gfh ghdsfsghdjf shfhd fhfsdhf fdsjfgd fdfgdhfsghdsgf gfgewru easkdjsf dfhhdfsdfjs hfdsf fhdsjfjkh dhkfsh dfhdfhf uifshdjfhkh fh"),
+                "I am a tech enthusiast passionate about crafting innovative and user-friendly mobile applications. With expertise in modern technologies like AI, data analysis, and interactive design, I bring creative ideas to life"),
           ),
           const SizedBox(
             height: 60,
           ),
-          Container(
-            width: 130,
-            height: 50,
-            decoration: const BoxDecoration(
-              color: Colors.transparent,
-              border: Border(
-                left: BorderSide(
-                  color: Colors.black, // Set your desired color
-                  width: 2.0, // Set your desired width
-                ),
-                right: BorderSide(
-                  color: Colors.black, // Set your desired color
-                  width: 2.0, // Set your desired width
-                ),
-                top: BorderSide.none, //No border on top
-                bottom: BorderSide.none, // No border on bottom
-              ),
-            ),
-            child: const Center(
-              child: Text(
-                ' EXPLORE ',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 60,
-          ),
-          const Text(
-            '----------<<<<<<<<<>>>>>>>>>>>>--------------',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+          const TwoSideButton(
+            text: 'EXPLORE',
           ),
           const SizedBox(
             height: 60,
@@ -103,15 +75,6 @@ class AboutMeSection extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 60,
-          ),
-          const Text(
-            '----------<<<<<<<<<>>>>>>>>>>>>--------------',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(
             height: 100,
           ),
           const HeadetWidget(
@@ -135,6 +98,44 @@ class AboutMeSection extends StatelessWidget {
   }
 }
 
+class TwoSideButton extends StatelessWidget {
+  final String text;
+  const TwoSideButton({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 130,
+      height: 40,
+      decoration: const BoxDecoration(
+        color: Colors.transparent,
+        border: Border(
+          left: BorderSide(
+            color: Colors.black, // Set your desired color
+            width: 2.0, // Set your desired width
+          ),
+          right: BorderSide(
+            color: Colors.black, // Set your desired color
+            width: 2.0, // Set your desired width
+          ),
+          top: BorderSide.none, //No border on top
+          bottom: BorderSide.none, // No border on bottom
+        ),
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style:
+              const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
 class LearningSkillsWidget extends StatelessWidget {
   const LearningSkillsWidget({
     super.key,
@@ -142,8 +143,11 @@ class LearningSkillsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 190.0),
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+    final int crossAxisCount = screenWidth < 600 ? 2 : 4;
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.5,
       child: Column(
         children: [
           const Align(
@@ -159,8 +163,10 @@ class LearningSkillsWidget extends StatelessWidget {
           const SizedBox(height: 60),
           GridView(
             shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: crossAxisCount,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20),
             children: const [
               SkillWidget(
                 imageUrl: 'lib/assets/learning_skills/javascript.png',
@@ -193,8 +199,11 @@ class OtherSkillsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 190.0),
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+    final int crossAxisCount = screenWidth < 600 ? 2 : 4;
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.5,
       child: Column(
         children: [
           const Align(
@@ -210,8 +219,10 @@ class OtherSkillsWidget extends StatelessWidget {
           const SizedBox(height: 30),
           GridView(
             shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: crossAxisCount,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20),
             children: const [
               SkillWidget(
                 imageUrl: 'lib/assets/other_skills/cplusplus.png',
@@ -244,8 +255,11 @@ class UsingSkillsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 190.0),
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+    final int crossAxisCount = screenWidth < 1200 ? 2 : 4;
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.5,
       child: Column(
         children: [
           const Align(
@@ -261,8 +275,10 @@ class UsingSkillsWidget extends StatelessWidget {
           const SizedBox(height: 60),
           GridView(
             shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: crossAxisCount,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20),
             children: const [
               SkillWidget(
                 imageUrl: 'lib/assets/using_skills/python.png',
