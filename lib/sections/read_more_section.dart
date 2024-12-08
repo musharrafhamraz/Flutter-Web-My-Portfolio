@@ -6,7 +6,7 @@ class ReadMoreSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 10, bottom: 10, top: 10),
+      padding: const EdgeInsets.only(left: 5, bottom: 10, top: 10),
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [Colors.black87, Colors.black54])),
       child: Row(
@@ -33,7 +33,7 @@ class ReadMoreSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  'Loedgsff jdhvahsl  fdsh ffhsdhfuhsd fdd fhdssfjkdshlf f fflf f  dfhadshfhdhsfah;dksjf ds, fhasdkjfbdsjk dfbasdhfbdsfjkhkdfasd kvvd kdbvuliahduifbd  ff hdioufdnv mc,v sdhfah sdifsflvm,cx.hv fnidfrgfkgshdfhvdnv  dfvdfldsjfoiudv ddv uib yrfiahifouerfhdsk rfij',
+                  'Musharraf Hamraz is a tech enthusiast with a strong passion for mobile app development and creating impactful digital solutions. He enjoys working with cutting-edge technologies, blending innovation with practical applications. From building interactive user experiences to exploring AI and data-driven insights, Musharraf constantly seeks to grow and contribute to the tech world. His commitment to learning and creativity drives him to turn ideas into meaningful solutions.',
                   style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w400,
