@@ -9,7 +9,7 @@ class HeaderSection extends StatelessWidget {
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
-          height: 600,
+          height: 700,
           color: Colors.black,
         ),
         Row(
@@ -19,7 +19,7 @@ class HeaderSection extends StatelessWidget {
               child: ClipPath(
                 clipper: TiltClipper(),
                 child: Container(
-                  height: 600,
+                  height: 700,
                   color: Colors.grey.shade400,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -46,7 +46,7 @@ class HeaderSection extends StatelessWidget {
                         ),
                         const SizedBox(height: 12),
                         const Text(
-                          'Flutter Developer / UI Designer',
+                          'ML Engineer / Flutter Developer',
                           style: TextStyle(
                             fontSize: 24,
                             color: Colors.black54,
@@ -80,7 +80,7 @@ class HeaderSection extends StatelessWidget {
             // Right half with black background and image
             Expanded(
               child: Container(
-                height: 600,
+                height: 700,
                 color: Colors.black,
                 child: Stack(
                   children: [
