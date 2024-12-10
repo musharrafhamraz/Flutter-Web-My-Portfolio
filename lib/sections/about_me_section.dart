@@ -5,10 +5,6 @@ class AboutMeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
-
-    final int crossAxisCount = screenWidth < 600 ? 2 : 4;
-
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 70.0, horizontal: 150),
       width: MediaQuery.of(context).size.width,
